@@ -29,7 +29,7 @@ app.use("/todos", todosRoutes);
 //   res.sendFile(imagePath);
 // }); // handler
 mongoose
-  .connect("mongodb://127.0.0.1:27017/test")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("DB Connected Successfully"))
   .catch((err) => console.log(`somehting went wrong with db ${err}`));
 
